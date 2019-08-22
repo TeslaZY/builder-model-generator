@@ -1,0 +1,37 @@
+<idea-plugin>
+    <id>com.xiaomi.miui.sec.builder-model-generator</id>
+    <name>BuilderModelGenerator</name>
+    <vendor email="zhangyuyu1@xiaomi.com" url="http://www.mi.com">Beijing Xiaomi Mobile Software Co.,Ltd.Nanjing Branch</vendor>
+
+
+    <description><![CDATA[
+        This plugin is used to automatically generate database entity classes.
+    The purpose is to provide a plug-in that enables the automatically generated
+    entity class to satisfy the builder design pattern, so that it is not necessary
+    to call the setter method of different parameters multiple times when generating
+    the entity object, because the constructor is split in multiple calls during
+    the construction process. The JavaBean in question may be in an inconsistent state.
+    At the same time, variable parameters are provided, and different construction m
+    ethods are not required for different parameters.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="GenerateBuilderModel" class="actions.GenerateBuilderModel" text="Generate Builder Model Class "
+                description="To translate JavaBean to Java class that satisfies the builder pattern">
+            <add-to-group group-id="GenerateGroup" anchor="after" relative-to-action="JavaGenerateGroup2"/>
+        </action>
+    </actions>
+</idea-plugin>
